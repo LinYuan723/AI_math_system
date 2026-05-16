@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+.env
+
+# IDE
+.vscode/
+
+# 项目数据与调试（不上传）
+data/
+debug/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Streamlit
+.streamlit/secrets.toml
