@@ -38,7 +38,70 @@
 
 如果你是第一次接触 Python，请严格按照以下步骤操作。
 
-### 第一步：安装 Python
+推荐使用 **Anaconda**（方式一），它能自动管理 Python 版本和依赖，避免环境冲突，对新手更友好。
+
+---
+
+### 选择你的安装方式
+
+#### 方式一：使用 Anaconda 管理环境（推荐）
+
+Anaconda 是一个 Python 环境管理工具，可以帮你自动配置 Python 环境，避免版本冲突。
+
+**1. 安装 Anaconda**
+
+- 打开浏览器，访问 https://www.anaconda.com/download
+- 下载对应系统的安装包（Windows 用户选择 `.exe` 文件）
+- 双击安装包，一路点击 "Next" 完成安装
+- 安装完成后，在开始菜单中找到 **Anaconda Prompt**（一个黑色窗口），打开它
+
+**2. 下载本项目**
+
+- 打开 https://github.com/LinYuan723/AI_math_system
+- 点击绿色按钮 "Code"，选择 "Download ZIP"
+- 将下载的 ZIP 文件解压到你想要的文件夹（如桌面）
+- 或者如果你会使用 Git，在 Anaconda Prompt 中输入：
+  ```bash
+  git clone https://github.com/LinYuan723/AI_math_system.git
+  ```
+
+**3. 创建虚拟环境**
+
+在 Anaconda Prompt 中，进入项目文件夹（包含 `APP.py` 的文件夹）：
+```bash
+cd 你的项目文件夹路径
+```
+例如解压在桌面：
+```bash
+cd C:\Users\你的用户名\Desktop\AI_math_system
+```
+
+然后创建一个独立的 Python 环境：
+```bash
+conda create -n ai_math python=3.10
+```
+出现提示时输入 `y` 并回车确认。
+
+**4. 激活环境并安装依赖**
+
+```bash
+conda activate ai_math
+```
+激活后，命令提示符前面会出现 `(ai_math)` 标识。然后安装项目依赖：
+```bash
+pip install -r requirements.txt
+```
+等待安装完成（可能需要 3-5 分钟）。
+
+> **每次使用项目前**，都需要先打开 Anaconda Prompt，进入项目文件夹，执行 `conda activate ai_math` 激活环境，然后才能运行项目。
+
+---
+
+#### 方式二：手动安装 Python
+
+如果你不想安装 Anaconda，也可以直接安装 Python。
+
+**1. 安装 Python**
 
 1. 打开浏览器，访问 https://www.python.org/downloads/
 2. 点击黄色按钮 "Download Python 3.x.x" 下载安装包
@@ -51,17 +114,17 @@
    ```
    如果显示 `Python 3.x.x` 说明安装成功。
 
-### 第二步：下载本项目
+**2. 下载本项目**
 
-1. 打开 https://github.com/GEMmoRtaL/AI_math_system
+1. 打开 https://github.com/LinYuan723/AI_math_system
 2. 点击绿色按钮 "Code"，选择 "Download ZIP"
 3. 将下载的 ZIP 文件解压到你想要的文件夹（如桌面）
 4. 或者如果你会使用 Git：
    ```bash
-   git clone https://github.com/GEMmoRtaL/AI_math_system.git
+   git clone https://github.com/LinYuan723/AI_math_system.git
    ```
 
-### 第三步：安装依赖
+**3. 安装依赖**
 
 1. 打开项目文件夹（包含 `APP.py` 的那个文件夹）
 2. 在文件夹地址栏输入 `cmd` 并回车，打开命令提示符
@@ -71,7 +134,7 @@
    ```
 4. 等待安装完成（可能需要 3-5 分钟，取决于网速）。如果出现红色报错，请检查网络连接后重试。
 
-### 第四步：配置 DeepSeek API 密钥
+### 配置 DeepSeek API 密钥（两种方式通用）
 
 AI 功能需要调用 DeepSeek 大模型，你需要一个 API 密钥：
 
@@ -89,7 +152,7 @@ AI 功能需要调用 DeepSeek 大模型，你需要一个 API 密钥：
 
 > ⚠️ **重要**：API 调用会产生费用（约 1-2 元/百万 token）。一个班级的成绩分析大约消耗几分钱。建议先充值 10 元测试使用。
 
-### 第五步：生成示例数据（可选，推荐）
+### 生成示例数据（可选，推荐）
 
 如果你还没有真实的学生成绩数据，可以先运行示例数据生成脚本来体验系统：
 ```bash
@@ -97,7 +160,7 @@ python demo/create_sample_data.py
 ```
 这会在 `data/` 文件夹下生成一个示例 Excel 文件，可以直接用于测试学情分析功能。
 
-### 第六步：启动应用
+### 启动应用
 
 在命令提示符中输入：
 ```bash
@@ -106,7 +169,7 @@ streamlit run APP.py
 
 等待几秒，浏览器会自动打开 `http://localhost:8501`，你就可以开始使用了。
 
-### 第七步：停止应用
+### 停止应用
 
 在命令提示符中按 `Ctrl + C` 即可停止应用。
 
@@ -165,6 +228,8 @@ AI_math_system/
 ├── demo/
 │   └── create_sample_data.py       # 生成示例成绩数据（3个Sheet格式的 Excel）
 │
+├── assets/                          # 截图和图片资源
+├── docs/                            # 文档（安装手册、使用手册等）
 ├── data/                           # 上传文件存储目录（不上传 Git）
 ├── debug/                          # 调试文件（不上传 Git）
 └── .streamlit/

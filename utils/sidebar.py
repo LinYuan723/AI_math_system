@@ -1,7 +1,10 @@
 """共享侧边栏组件"""
 import streamlit as st
 import os
+from dotenv import load_dotenv
 from utils.database import get_students, get_exams, get_error_records
+
+load_dotenv()
 
 # 可选模型
 MODELS = {
