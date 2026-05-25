@@ -29,6 +29,7 @@ Thumbs.db
 # Streamlit
 .streamlit/secrets.toml
 
-# docx and excel files
+# documents
 *.docx
-*.xlsx
+*.pdf
+*.pptx
